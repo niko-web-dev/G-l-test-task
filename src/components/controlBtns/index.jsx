@@ -33,20 +33,26 @@ class ControlBtns extends React.Component {
     formHandler = (e) => {
         e.preventDefault()
 
-        const newProduct = {
-            id: Date.now(),
-            title: this.state.inputTitle,
-            description: this.state.inputDescription,
-            price: `${this.state.inputPrice} ₽`
+        if ( this.state.inputTitle && this.state.inputDescription && this.state.inputPrice) {
+            const newProduct = {
+                id: Date.now(),
+                title: this.state.inputTitle,
+                description: this.state.inputDescription,
+                price: `${this.state.inputPrice} ₽`
+            }
+
+            this.addProduct(newProduct)
+
+            this.setState({
+                inputTitle: '',
+                inputDescription: '',
+                inputPrice: ''
+            })
+        } else {
+            console.log('no')
         }
 
-        this.addProduct(newProduct)
 
-        this.setState({
-            inputTitle: '',
-            inputDescription: '',
-            inputPrice: ''
-        })
 
     };
 
@@ -56,22 +62,24 @@ class ControlBtns extends React.Component {
 
     authUser = async e => {
         e.preventDefault()
-
         const formDataName = this.state.inputName
         const formDataPass = this.state.inputPassword
 
-        this.getUsersDb()
-            .then(res => {
-                const userData = res.data
-                if(formDataName === userData[0].login
-                    && formDataPass === userData[0].password) {
-                    this.props.dispatch( AUTH_USER,
-                        {
-                            isAuth: true
-                        }
-                    )
-                }
-            })
+            this.getUsersDb()
+                .then(res => {
+                    const userData = res.data
+                    if(formDataName === userData[0].login
+                        && formDataPass === userData[0].password) {
+                        this.props.dispatch( AUTH_USER,
+                            {
+                                isAuth: true
+                            }
+                        )
+                    }
+                })
+
+
+
 
     }
 

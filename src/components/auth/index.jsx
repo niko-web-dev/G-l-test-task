@@ -17,13 +17,13 @@ class Auth extends React.Component {
             <form className="form"
                   onSubmit={authUser}>
 
-                <spun>Ваш логин: "user"</spun>
+                <p>Ваш логин: "user"</p>
                 <input className="form-btn"
                        type="text"
                        placeholder="Введите login"
                        onChange={e => handlerInputLogin(e)}
                 />
-                <spun>Ваш пароль: "123"</spun>
+                <p>Ваш пароль: "123"</p>
                 <input className="form-btn"
                        type="password"
                        placeholder="Введите пароль"

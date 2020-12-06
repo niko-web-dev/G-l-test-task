@@ -14,9 +14,9 @@ export class Product extends React.Component {
     return (
       <div className="product">
         <div className="product-info">
-          <p className="product-info-title">
-            {product.title} - {product.id}
-          </p>
+          <h3 className="product-info-title">
+            {product.title} - <span>{product.id}</span>
+          </h3>
           <p className="product-info-description">{product.description}</p>
           <div>
             <span className="product-info-price">{price}</span>
@@ -31,7 +31,7 @@ export class Product extends React.Component {
           <button
               className="product-remode"
               onClick={() => deleteProduct(product.id)}>
-            Удалить
+            X
           </button>
         </div>
       </div>
