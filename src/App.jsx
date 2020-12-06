@@ -1,5 +1,7 @@
 import React from "react";
 import "./state/stores/ProductsStore";
+import "./state/stores/AuthStore";
+
 import './index.scss';
 
 import ProductList from "./components/productList";

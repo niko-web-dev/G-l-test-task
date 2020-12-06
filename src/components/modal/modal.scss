@@ -21,6 +21,7 @@
     margin: 40px auto;
     position: relative;
     transition: 0.5s all ease;
+    cursor: pointer;
     &:hover {
       transform: scale(1.1);
       border-bottom: 1px solid black;
@@ -52,6 +53,7 @@
     width: 25px;
     height: 25px;
     transition: 0.7s all ease;
+    cursor: pointer;
     &:hover {
       transform: rotate(360deg);
     }
@@ -65,7 +67,7 @@
   &-btn {
     max-width: 350px;
     border-radius: 8px;
-    margin: 20px auto;
+    margin: 15px auto 10px;
     padding: 10px 7px;
     border: none;
     &-submit {
@@ -78,5 +80,10 @@
 
       }
     }
+  }
+  spun {
+    display: block;
+    font-size: 14px;
+    margin: 15px auto 5px;
   }
 }

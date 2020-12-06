@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from '../modal'
 
-export class AddingCard extends React.Component {
+export default class AddingCard extends React.Component {
 
   render() {
     const { state,
@@ -15,6 +15,7 @@ export class AddingCard extends React.Component {
 
         <form className="form"
               onSubmit={formHandler}>
+
           <input className="form-btn"
                 type="text"
                 name="title"
@@ -22,6 +23,7 @@ export class AddingCard extends React.Component {
                 value={state.inputTitle}
                 onChange={e => handlerInputTitle(e)}
           />
+
           <input className="form-btn"
                 type="text"
                 name="description"

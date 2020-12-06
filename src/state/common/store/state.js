@@ -24,4 +24,7 @@ export const state = {
       },
     ],
   },
+  users: {
+    isAuth: false
+  }
 };

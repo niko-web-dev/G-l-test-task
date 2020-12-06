@@ -4,7 +4,8 @@ import { withStore } from "../../state/withStore";
 import "./product-list.scss";
 
 import { Product } from "../product";
-import { ControlBtns } from "../controlBtns";
+import ControlBtns  from "../controlBtns";
+
 import { REMOVE_PRODUCT } from "../../state/stores/ProductsStore";
 
 
@@ -16,7 +17,6 @@ class ProductList extends React.Component {
 
   render() {
     const { products, dispatch } = this.props;
-      console.log(products)
 
     return (
       <>
