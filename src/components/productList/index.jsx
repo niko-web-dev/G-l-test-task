@@ -1,18 +1,28 @@
 import React from "react";
 import { withStore } from "../../state/withStore";
-import { Product } from "../product";
+
 import "./product-list.scss";
+
+import { Product } from "../product";
+import {ControlBtns} from "../controlBtns";
+
 
 class ProductList extends React.Component {
   render() {
-    const { products } = this.props;
+    const { products, dispatch } = this.props;
 
     return (
-      <div className="product-list">
-        {products.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
-      </div>
+      <>
+        <ControlBtns
+          products={products}
+          dispatch={dispatch}
+        />
+        <div className="product-list">
+          {products.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </div>
+      </>
     );
   }
 }

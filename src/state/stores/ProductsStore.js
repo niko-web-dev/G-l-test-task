@@ -16,9 +16,9 @@ const ProductsStore = new Store("products", {
     {
       type: ADD_PRODUCT,
       action(state, payload) {
-        const { product } = payload;
+        // const { product } = payload;
 
-        const products = [...state.products, product];
+        const products = [...state.products, payload];
 
         return {
           ...state,

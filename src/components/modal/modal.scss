@@ -1,0 +1,82 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all ease;
+  z-index: 100;
+  &-btn {
+    display: block;
+    background: transparent;
+    outline: none;
+    border: 1px solid transparent;
+    font-size: 20px;
+    margin: 40px auto;
+    position: relative;
+    transition: 0.5s all ease;
+    &:hover {
+      transform: scale(1.1);
+      border-bottom: 1px solid black;
+    }
+  }
+  &-content {
+    position: relative;
+    color: #fff;
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #383838;
+    transition: 0.5s all ease;
+  }
+    &.active {
+      transform: scale(1);}
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &-close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 20px;
+    border: none;
+    background: #95d7d7;
+    width: 25px;
+    height: 25px;
+    transition: 0.7s all ease;
+    &:hover {
+      transform: rotate(360deg);
+    }
+
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  &-btn {
+    max-width: 350px;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 10px 7px;
+    border: none;
+    &-submit {
+      background: #95d7d7;
+      color: black;
+      transition: 0.5s all ease;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.3);
+
+      }
+    }
+  }
+}
