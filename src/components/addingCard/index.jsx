@@ -4,7 +4,6 @@ import Modal from '../modal'
 export class AddingCard extends React.Component {
 
   render() {
-      // console.log(this.props)
     const { state,
             formHandler,
             handlerInputTitle,

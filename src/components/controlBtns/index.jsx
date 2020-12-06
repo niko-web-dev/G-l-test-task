@@ -31,7 +31,6 @@ export class ControlBtns extends React.Component {
         }
 
         this.addProduct(newProduct)
-debugger
         this.setState({inputTitle: ''})
         this.setState({inputDescription: ''})
         this.setState({inputPrice: ''})

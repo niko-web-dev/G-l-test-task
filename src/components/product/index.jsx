@@ -3,7 +3,7 @@ import "./product.scss";
 
 export class Product extends React.Component {
   render() {
-    const { product } = this.props;
+    const { product, deleteProduct  } = this.props;
     const price = product.price.toLocaleString("ru", {
       maximumFractionDigits: 2,
       minimumFractionDigits: 2,
@@ -28,6 +28,11 @@ export class Product extends React.Component {
             src="https://s1.ticketm.net/dam/a/3ea/a7473588-64b1-4fac-ad26-596f70b993ea_647801_TABLET_LANDSCAPE_LARGE_16_9.jpg"
             alt=""
           />
+          <button
+              className="product-remode"
+              onClick={() => deleteProduct(product.id)}>
+            Удалить
+          </button>
         </div>
       </div>
     );

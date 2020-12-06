@@ -4,12 +4,19 @@ import { withStore } from "../../state/withStore";
 import "./product-list.scss";
 
 import { Product } from "../product";
-import {ControlBtns} from "../controlBtns";
+import { ControlBtns } from "../controlBtns";
+import { REMOVE_PRODUCT } from "../../state/stores/ProductsStore";
 
 
 class ProductList extends React.Component {
+
+  deleteProduct = (id) => {
+     this.props.dispatch(REMOVE_PRODUCT, {id});
+  };
+
   render() {
     const { products, dispatch } = this.props;
+      console.log(products)
 
     return (
       <>
@@ -19,7 +26,11 @@ class ProductList extends React.Component {
         />
         <div className="product-list">
           {products.map((product) => (
-            <Product key={product.id} product={product} />
+            <Product
+                key={product.id}
+                product={product}
+                deleteProduct={this.deleteProduct}
+            />
           ))}
         </div>
       </>
